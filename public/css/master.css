@@ -1,0 +1,31 @@
+body {
+	background-color: black;
+	}
+
+div.header {
+    display: flex;
+    justify-content: center;
+	}
+	
+.logo {
+  top: 0;
+  width: 85%;
+	}
+
+.green {
+	color: rgb(74, 202, 97);
+	text-align: center;
+	font-family: gotham;
+	font-size: 7vh;
+	margin-top: 1vh;
+	}
+	
+div.container {
+	display: flex;
+    justify-content: center;
+    }
+    
+#login-button {
+	 font-size: 7vh;
+	 margin-top: 15vh;
+	}
