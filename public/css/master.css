@@ -1,18 +1,46 @@
-body {
+/* Paul Irish */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Nicolas Gallagher */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* Floats */
+.cf {
+    *zoom: 1;
+}
+
+/* font */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Index */
+#background {
 	background-color: black;
 	background-image: url(../images/coversblack.jpg);
 	font-family: roboto;
 	color: white;
 	}
 
-div.header {
+#header {
     display: flex;
     justify-content: center;
 	}
 	
 .logo {
-  top: 0;
-  width: 85%;
+  margin-top: 10px;
+  width: 90%;
 	}
 
 .green {
@@ -33,10 +61,84 @@ div.container {
     justify-content: center;
     }
     
-#login-button {
+button {
 	 font-size: 7vh;
-	 margin-top: 15vh;
+	 margin-top: 14vh;
 	 padding: 4vh 5vh;
 	 border-radius: 10%;
+	 letter-spacing: 5px;
+	 cursor: pointer;
+	}
+
+button:hover{
+	transition-duration: .8s;
+}
+
+button:active {
+	top: 2px;
+}
+
+/* Battle */
+#headerbattle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 	}
 	
+.logo1 {
+  margin-top: 10px;
+  width: 80%;
+  }
+  
+.green1 {
+	color: rgb(74, 202, 97);
+	text-align: center;
+	font-size: 4vh;
+	}
+
+#backgroundbattle {
+	background-color: black;
+	font-family: roboto;
+	color: white;
+	}
+
+#artists {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+	}
+	
+#artistinput {
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+	}
+	
+input {
+    padding: 1vh 2vh;
+    font-size: 3vh;
+	}
+	
+.artistbox {
+    width: 40vh;
+    height: 40vh;
+    border: 7px solid white;
+    margin-top: 1vh;
+	}
+	
+.button1 {
+    width: 50%;
+    display: block;
+    font-size: 4vh;
+    margin: auto;
+    cursor: pointer;
+	}
+	
+#ideas-button {
+	 font-size: 2vh;
+	 margin-top: 3vh;
+	 padding: 2vh 10vh;
+	 border-radius: 5%;
+	 letter-spacing: 2px;
+	 cursor: pointer;
+	}
