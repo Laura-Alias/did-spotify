@@ -2,6 +2,7 @@ body {
 	background-color: black;
 	background-image: url(../images/coversblack.jpg);
 	font-family: roboto;
+	color: white;
 	}
 
 div.header {
@@ -17,8 +18,14 @@ div.header {
 .green {
 	color: rgb(74, 202, 97);
 	text-align: center;
-	font-size: 7vh;
+	font-size: 8vh;
 	margin-top: 1vh;
+	}
+	
+.text {
+	text-align: center;
+	font-size: 3vh;
+	margin-top: 5vh;
 	}
 	
 div.container {
@@ -29,4 +36,7 @@ div.container {
 #login-button {
 	 font-size: 7vh;
 	 margin-top: 15vh;
+	 padding: 4vh 5vh;
+	 border-radius: 10%;
 	}
+	
