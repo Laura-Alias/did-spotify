@@ -16,32 +16,40 @@
     <div id="user-profile"></div>
     
     <div id="headerbattle">
-  		<a href="index.html"><img class="logo1" src="images/logo.png" alt="logo"></a>
+  		<a href="index.html"><img class="logo1" src="../images/logo.png" alt="logo"></a>
   		<h1 class="green1">Spotify Artist Battle</h1>
     
-    	<div id="battle">
+    	 <div id="search-form" class="center">
         
-       	 <form>
-          	  <div id="artists">
-              	  <div id="artistinput">
-             	     <input type="text" name="artist1" placeholder="Enter an Artist Name">
-              	    <div class="artistbox artist1"></div>
-              	  </div>
-            
-              	  <div id="artistinput">
-              	    <input type="text" name="artist2" placeholder="Enter an Artist Name">    
-              	    <div class="artistbox artist2"></div>
-              	  </div>
-           	 </div>
-             
-           	 <input type="submit" value="Submit" class="button1">
-       	 </form>
-            
-      </div>
-      
-    <div id="ideas">
-        <a href="ideas.html"><button id="ideas-button" class="btn btn-primary">Need Ideas?</button></a>
-    </div>
+        <div class="space"> 
+        <input type="text" id="artist1" value="" class="form-artists" placeholder="Type an Artist Name"/>
+        <button id="button1" class="btn-secondary">Search</button>
+        <div id="firstArtist"><ul></ul></div>
+            </div>
+        
+        <div class="space">
+        <input type="text" id="artist2" value="" class="form-artists" placeholder="Type an Artist Name"/>
+        <button id="button2" class="btn-secondary">Search</button>
+            <div id="secondArtist"></div>
+            </div>
+        
+        </div>
+     
+        <div class="center">  
+    <button id="fight" class="btn-primary">Start Battle!</button>
+            </div>
+        
+             <div class="center">    
+    <div id="results">
+        <div id= "modalBox">
+
+        </div>
+        
+        <button id="playAgain" class="btn-primary">Play Again</button>  
+        </div>
+        
+        </div>
+  
       
     </div>
       
