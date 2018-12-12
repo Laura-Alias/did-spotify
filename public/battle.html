@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   </head>
   
-  <body id="backgroundbattle">
+  <body class="backgroundbattle">
     <div class="container">
     <div id="user-profile"></div>
     
@@ -19,42 +19,39 @@
   		<a href="../index.html"><img class="logo1" src="../images/logo.png" alt="logo"></a>
   		<h1 class="green1">Spotify Artist Battle</h1>
     
-    	 <div id="search-form" class="center">
+    	<div id="search-form">
         
-        <div class="space"> 
+        <div class="artist-left"> 
         <input type="text" id="artist1" value="" class="form-artists" placeholder="Type an Artist Name"/>
         <button id="button1" class="btn-secondary">Search</button>
-        <div id="firstArtist"><ul></ul></div>
+        <div id="firstartist"><ul></ul></div>
             </div>
         
-        <div class="space">
+        <div class="artist-right">
         <input type="text" id="artist2" value="" class="form-artists" placeholder="Type an Artist Name"/>
         <button id="button2" class="btn-secondary">Search</button>
-            <div id="secondArtist"></div>
+            <div id="secondartist"></div>
             </div>
         
         </div>
      
-        <div class="center">  
+        <div>  
     <button id="fight" class="btn-primary">Start Battle!</button>
             </div>
         
-             <div class="center">    
-    <div id="results">
-        <div id= "modalBox">
+        <div class="line">    
+    		<div id="results">
+       			<div id="modalBox"></div>
+       	</div>
+        
+    		<button id="playagain" class="btn-primary">Play Again</button>  
+    
+    		<button id="idea" class="btn-primary">Need Ideas?</button>  
+    	</div>
+        
+	</div>
+	</div>
 
-        </div>
-        
-        <button id="playAgain" class="btn-primary">Play Again</button>  
-        </div>
-        
-            <button id="Idea" class="btn-primary">Need Ideas?</button>  
-        </div>
-        
-        </div>
-  
-      
-    </div>
       
     <script type="module" src="/js/pages/battle.js"></script>
 </html>

@@ -32,9 +32,9 @@ if (!access_token || (state == null || state !== storedState)) {
 }
 
 const results = document.getElementById('results');
-const firstArtist = document.getElementById('firstArtist');
-const secondArtist = document.getElementById('secondArtist');
-const playAgain = document.getElementById('playAgain');
+const firstArtist = document.getElementById('firstartist');
+const secondArtist = document.getElementById('secondartist');
+const playAgain = document.getElementById('playagain');
 const button1 = document.getElementById('button1');
 
 

@@ -25,11 +25,6 @@ html {
 /* font */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-/* Button*/
-
-button {
-	background-color: rgb(74, 202, 97);
-	}
 
 /* Index */
 #background {
@@ -59,7 +54,7 @@ button {
 .text {
 	text-align: center;
 	font-size: 3vh;
-	margin-top: 5vh;
+	margin-top: 2vh;
 	}
 	
 div.container {
@@ -68,11 +63,8 @@ div.container {
     }
     
 button {
-	 font-size: 7vh;
-	 margin-top: 14vh;
-	 padding: 4vh 5vh;
 	 border-radius: 10%;
-	 letter-spacing: 5px;
+	 letter-spacing: 1px;
 	 cursor: pointer;
 	}
 
@@ -84,6 +76,14 @@ button:active {
 	top: 2px;
 }
 
+#login-button {
+	background-color: rgb(74, 202, 97);
+	font-size: 4vh;
+	padding: 2vh 2vh;
+	margin-top: 8vh;
+	}
+	
+	
 /* Battle */
 #headerbattle {
     display: flex;
@@ -99,66 +99,60 @@ button:active {
 .green1 {
 	color: rgb(74, 202, 97);
 	text-align: center;
-	font-size: 4vh;
+	font-size: 5vh;
+	margin-top: -1vh;
 	}
-
-#backgroundbattle {
+	
+.backgroundbattle {
 	background-color: black;
 	font-family: roboto;
 	color: white;
 	}
-
-#artists {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-	}
 	
-#artistinput {
-    display: flex;
-    flex-direction: column;
-    padding: 3vh;
-	}
-	
-input {
+button, .btn-secondary {
     padding: 1vh 2vh;
     font-size: 3vh;
+    background-color: rgb(74, 202, 97); 
+    margin-right: 3vh;
 	}
 	
-.artistbox {
-    width: 40vh;
-    height: 40vh;
-    border: 7px solid white;
-    margin-top: 1vh;
-	}
+input, .form-artists {
+	padding: 1vh 1vh;
+	color: black;
+	margin-left: 1vh;
+	}	
 	
-.button1 {
-    width: 50%;
-    display: block;
-    font-size: 4vh;
-    margin: auto;
-    cursor: pointer;
-	}
+#search-form {
+	display: flex;
+    flex-direction: line;
+    }
 	
-#ideas-button {
-	 font-size: 2vh;
-	 margin-top: 3vh;
-	 padding: 2vh 10vh;
-	 border-radius: 5%;
-	 letter-spacing: 2px;
-	 cursor: pointer;
+button, .btn-primary {
+    padding: 1vh 2vh;
+    font-size: 3vh;
+    margin-top: 2vh;
+    margin-right: 1vh;
+    margin-left: 1vh;
 	}
 
+#fight {
+	background-color: rgb(74, 202, 97);
+	}
+	
+#playagain {
+	background-color: rgb(74, 202, 97);
+	}
+	
+#idea {
+	background-color: rgb(74, 202, 97);
+	}
 
-input, .btn-secondary {
-    font-size: 15px;
-    padding: 10px;
-}
 img {
-    margin: 15px 0;
-    width: 175px;
-}
+    margin-top: 2vh;
+    width: 30vh;
+	}
+
 span {
-    font-weight: 900;
-    text-transform: uppercase;
-}
+	text-transform: uppercase;
+    font-size: 2vh;
+	}
