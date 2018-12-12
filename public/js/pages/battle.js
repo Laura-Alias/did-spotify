@@ -29,9 +29,6 @@ const outputTemplate = ({display_name, id, email, uri, external_urls, images, co
 if (!access_token || (state == null || state !== storedState)) {
   window.location = "/";
 } else {
-  SpotifyAPI.getUserData(access_token).then(data => {
-    USER_PROFILE.innerHTML = outputTemplate(data);
-  });
 }
 
 const results = document.getElementById('results');

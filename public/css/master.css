@@ -25,6 +25,12 @@ html {
 /* font */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+/* Button*/
+
+button {
+	background-color: rgb(74, 202, 97);
+	}
+
 /* Index */
 #background {
 	background-color: black;
@@ -142,3 +148,17 @@ input {
 	 letter-spacing: 2px;
 	 cursor: pointer;
 	}
+
+
+input, .btn-secondary {
+    font-size: 15px;
+    padding: 10px;
+}
+img {
+    margin: 15px 0;
+    width: 175px;
+}
+span {
+    font-weight: 900;
+    text-transform: uppercase;
+}

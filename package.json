@@ -3,11 +3,18 @@
   "name": "spotify-artist-battle-app",
   "description": "Battle Artists to see who is the best!",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "jest"
   },
   "version": "0.0.1",
   "dependencies": {
-    "express": "~4.16.0",
-    "node": "^11.4.0"
+    "express": "~4.16.0"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-jest": "^23.6.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0"
   }
 }
