@@ -31,14 +31,32 @@ if (!access_token || (state == null || state !== storedState)) {
 } else {
 }
 
+//Buttons
+
+$(document).ready(function(){
+	$("button.buttonFollowers").click(function(){
+	$("#followerssection").fadeToggle("fast");
+   	 	});
+	});
+	
+$(document).ready(function(){
+	$("button.buttonPopularity").click(function(){
+	$("#popularitysection").fadeToggle("fast");
+   	 	});
+	});
+
+
+
+//Followers 
+
 const results = document.getElementById('results');
 const firstArtist = document.getElementById('firstartist');
 const secondArtist = document.getElementById('secondartist');
 const playAgain = document.getElementById('playagain');
 const button1 = document.getElementById('button1');
+const button2 = document.getElementById('button2');
 
 
-//SEARCH FOR ARTIST 1
 async function getArtists() {
 try {
 const userInput1 = document.getElementById('artist1').value;
@@ -49,7 +67,7 @@ const response = await fetch(`https://api.spotify.com/v1/search?q=${userInput1}/
     });
 const data = await response.json();
    for (let i = 0; i < data.artists.items.length; i++) {
-     firstArtist.innerHTML = `<img src="${data.artists.items[i].images[i].url}"> <br> <span>${data.artists.items[i].name}</span> has ${data.artists.items[i].followers.total} followers`;
+     firstArtist.innerHTML = `<img src="${data.artists.items[i].images[i].url}"> <br> <span>${data.artists.items[i].name}</span>: ${data.artists.items[i].followers.total} followers`;
    }
 
                                                    
@@ -62,8 +80,7 @@ const data = await response.json();
  button1.addEventListener('click', getArtists); 
 
 
-
-// SEARCH FOR ARTIST 2                             
+                            
 async function getArtists2() {
 try {
 const userInput2 = document.getElementById('artist2').value;
@@ -73,7 +90,7 @@ const response = await fetch(`https://api.spotify.com/v1/search?q=${userInput2}/
       }
     });
 const data = await response.json();
-     secondArtist.innerHTML = `<img src="${data.artists.items[0].images[0].url}"> <br> <span>${data.artists.items[0].name}</span> has ${data.artists.items[0].followers.total} followers`;
+     secondArtist.innerHTML = `<img src="${data.artists.items[0].images[0].url}"> <br> <span>${data.artists.items[0].name}</span>: ${data.artists.items[0].followers.total} followers`;
 
 
 } catch (err){ 
@@ -82,14 +99,12 @@ const data = await response.json();
  
 }
 
-document.getElementById('button2').addEventListener('click', getArtists2);
+button2.addEventListener('click', getArtists2);
 
 
 
-// MAKE THEM FIGHT!
-async function artistsPop() {
+async function artistsFollowers() {
 try {
-// INFO ABOUT ARTIST 1
 const userInput1 = document.getElementById('artist1').value;
 const response1 = await fetch(`https://api.spotify.com/v1/search?q=${userInput1}/&type=artist&limit=1`, {
       headers: {
@@ -97,14 +112,14 @@ const response1 = await fetch(`https://api.spotify.com/v1/search?q=${userInput1}
       }
     });
 const data1 = await response1.json();
-let pop1 = `${data1.artists.items[0].popularity}`
+let followers1 = `${data1.artists.items[0].followers.total}`
 let musicianName1 = `${data1.artists.items[0].name}`
 let musicianPicture1 = `${data1.artists.items[0].images[0].url}`
 function displayInfo1() {
-     return pop1, musicianName1;
+     return followers1, musicianName1;
 }
    displayInfo1();
-// INFO ABOUT ARTIST 2    
+      
 const userInput2 = document.getElementById('artist2').value;
 const response2 = await fetch(`https://api.spotify.com/v1/search?q=${userInput2}/&type=artist&limit=1`, {
       headers: {
@@ -112,20 +127,20 @@ const response2 = await fetch(`https://api.spotify.com/v1/search?q=${userInput2}
       }
     });
 const data2 = await response2.json();
-let pop2 = `${data2.artists.items[0].popularity}`
+let followers2 = `${data2.artists.items[0].followers.total}`
 let musicianName2 = `${data2.artists.items[0].name}`
 let musicianPicture2 = `${data2.artists.items[0].images[0].url}`
 function displayInfo2() {
-     return pop2, musicianName2;
+     return followers2, musicianName2;
 }
    displayInfo2();
- // THE BATTLE   
-    if (pop1 > pop2) {
-    modalBox.innerHTML = `<img src="${musicianPicture1}"> <br> <span>${musicianName1}</span> won with a popularity of ${pop1}`
-}    else if (pop2 > pop1) {
-    modalBox.innerHTML = `<img src="${musicianPicture2}"> <br> <span>${musicianName2}</span> won with a popularity of ${pop2}`
-} else if (pop2 === pop1) {
-    modalBox.innerHTML = `Both win with a popularity of ${pop2}`;
+   
+    if (followers1 - followers2 > 0) {
+    modalBox.innerHTML = `<img src="${musicianPicture1}"> <br> <span>${musicianName1}</span> is the WINNER !`
+}   else if (followers1 - followers2 < 0) {
+    modalBox.innerHTML = `<img src="${musicianPicture2}"> <br> <span>${musicianName2}</span> is the WINNER !`
+} 	else if (followers2 === followers1) {
+    modalBox.innerHTML = `Incredible ! They are equal with exactly ${followers1} followers!`;
 }
 
 }
@@ -136,8 +151,122 @@ function displayInfo2() {
 }
 
 
-document.getElementById('fight').addEventListener('click', artistsPop);
+//Play again Followers
+
+document.getElementById('fight').addEventListener('click', artistsFollowers);
 
 
-// CLEAR TO PLAY AGAIN
 playAgain.addEventListener('click', () => location.reload())
+
+
+//Popularity 
+
+const resultsb = document.getElementById('resultsb');
+const firstArtistb = document.getElementById('firstartistb');
+const secondArtistb = document.getElementById('secondartistb');
+const playAgainb = document.getElementById('playagainb');
+const button1b = document.getElementById('button1b');
+const button2b = document.getElementById('button2b');
+
+
+async function getArtistsb() {
+try {
+const userInput1b = document.getElementById('artist1b').value;
+const response = await fetch(`https://api.spotify.com/v1/search?q=${userInput1b}/&type=artist&limit=1`, {
+      headers: {
+        'Authorization': `Bearer ${access_token}`
+      }
+    });
+const datab = await response.json();
+   for (let i = 0; i < datab.artists.items.length; i++) {
+     firstArtistb.innerHTML = `<img src="${datab.artists.items[i].images[i].url}"> <br> <span>${datab.artists.items[i].name}</span>: ${datab.artists.items[i].popularity}/100 of popularity`;
+   }
+
+                                                   
+} catch (err){ 
+    console.log(err);
+ }
+ 
+}
+
+ button1b.addEventListener('click', getArtistsb); 
+
+                            
+async function getArtists2b() {
+try {
+const userInput2b = document.getElementById('artist2b').value;
+const response = await fetch(`https://api.spotify.com/v1/search?q=${userInput2b}/&type=artist&limit=1`, {
+      headers: {
+        'Authorization': `Bearer ${access_token}`
+      }
+    });
+const datab = await response.json();
+     secondArtistb.innerHTML = `<img src="${datab.artists.items[0].images[0].url}"> <br> <span>${datab.artists.items[0].name}</span>: ${datab.artists.items[0].popularity}/100 of popularity`;
+
+
+} catch (err){ 
+    console.log(err);
+ }
+ 
+}
+
+button2b.addEventListener('click', getArtists2b);
+
+
+
+async function artistsPopularity() {
+try {
+const userInput1b = document.getElementById('artist1b').value;
+const response1b = await fetch(`https://api.spotify.com/v1/search?q=${userInput1b}/&type=artist&limit=1`, {
+      headers: {
+        'Authorization': `Bearer ${access_token}`
+      }
+    });
+const data1b = await response1b.json();
+let popularity1 = `${data1b.artists.items[0].popularity}`
+let musicianName1b = `${data1b.artists.items[0].name}`
+let musicianPicture1b = `${data1b.artists.items[0].images[0].url}`
+function displayInfo1b() {
+     return popularity1, musicianName1b;
+}
+   displayInfo1b();
+      
+const userInput2b = document.getElementById('artist2b').value;
+const response2b = await fetch(`https://api.spotify.com/v1/search?q=${userInput2b}/&type=artist&limit=1`, {
+      headers: {
+        'Authorization': `Bearer ${access_token}`
+      }
+    });
+const data2b = await response2b.json();
+let popularity2 = `${data2b.artists.items[0].popularity}`
+let musicianName2b = `${data2b.artists.items[0].name}`
+let musicianPicture2b = `${data2b.artists.items[0].images[0].url}`
+function displayInfo2b() {
+     return popularity2, musicianName2b;
+}
+   displayInfo2b();
+   
+    if (popularity1 - popularity2 > 0) {
+    modalBoxb.innerHTML = `<img src="${musicianPicture1b}"> <br> <span>${musicianName1b}</span> is the WINNER !`
+}   else if (popularity1 - popularity2 < 0) {
+    modalBoxb.innerHTML = `<img src="${musicianPicture2b}"> <br> <span>${musicianName2b}</span> is the WINNER !`
+} 	else if (popularity2 === popularity1) {
+    modalBoxb.innerHTML = `Incredible ! They are equal with exactly ${popularity1}/100 of popularity!`;
+}
+
+}
+
+ catch (err){ 
+    console.log(err);
+ }
+}
+
+//Play again Popularity
+
+document.getElementById('fightb').addEventListener('click', artistsPopularity);
+
+
+playAgainb.addEventListener('click', () => location.reload()) 
+
+
+

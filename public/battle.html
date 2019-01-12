@@ -6,6 +6,7 @@
     <meta name="description" content="Spotify Artist Battle. Compare two artists, only one can win!">
 	<meta name="keywords" content="Spotify, Battle, Artist, Band, Music, Fight, Winner, Song, Sound, Popular">
 	<meta name="author" content="Laura Alias">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link type="text/css" rel="stylesheet" href="../css/reset.css"/>
 	<link type="text/css" rel="stylesheet" href="../css/master.css"/>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -18,7 +19,14 @@
     <div id="headerbattle">
   		<a href="../index.html"><img class="logo1" src="../images/logo.png" alt="logo"></a>
   		<h1 class="green1">Spotify Artist Battle</h1>
-    
+   
+<div>  
+<button class="buttonFollowers">Followers Battle</button>
+<button class="buttonPopularity">Popularity Battle</button>
+</div>
+   
+<div id="followerssection">
+
     	<div id="search-form">
         
         <div class="artist-left"> 
@@ -35,6 +43,7 @@
         
         </div>
      
+     <div id="col">
         <div>  
     <button id="fight" class="btn-primary">Start Battle!</button>
             </div>
@@ -46,12 +55,57 @@
         
     		<button id="playagain" class="btn-primary">Play Again</button>  
     
-    		<button id="idea" class="btn-primary">Need Ideas?</button>  
     	</div>
+    </div>
+
+</div>
+
+
+
+<div id="popularitysection">
+   	
+    	
+    	<div id="search-form">
+        
+        <div class="artist-left"> 
+        <input type="text" id="artist1b" value="" class="form-artists" placeholder="Type an Artist Name"/>
+        <button id="button1b" class="btn-secondary">Search</button>
+        <div id="firstartistb"><ul></ul></div>
+            </div>
+        
+        <div class="artist-right">
+        <input type="text" id="artist2b" value="" class="form-artists" placeholder="Type an Artist Name"/>
+        <button id="button2b" class="btn-secondary">Search</button>
+            <div id="secondartistb"></div>
+            </div>
+        
+        </div>
+     
+     <div id="col">
+        <div>  
+    <button id="fightb" class="btn-primary">Start Battle!</button>
+            </div>
+        
+        <div class="line">    
+    		<div id="resultsb">
+       			<div id="modalBoxb"></div>
+       	</div>
+        
+    		<button id="playagainb" class="btn-primary">Play Again</button>  
+    
+    	</div>
+    </div>
+    	
+</div>
+
+
         
 	</div>
 	</div>
 
       
     <script type="module" src="/js/pages/battle.js"></script>
+    <script src="/js/pages/jquery-3.3.1.js"></script>
+    
+    </body>
 </html>
