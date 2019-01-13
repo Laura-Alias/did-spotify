@@ -127,6 +127,11 @@ input, .form-artists {
 	display: flex;
     flex-direction: line;
     }
+    
+#search-formb {
+	display: flex;
+    flex-direction: line;
+    }
 	
 button, .btn-primary {
     padding: 1vh 2vh;
@@ -170,6 +175,12 @@ span {
 /* Organisation */
 	
 #col {
+	display: flex;
+	flex-direction: line;
+	justify-content: center;
+	}
+
+#colb {
 	display: flex;
 	flex-direction: line;
 	justify-content: center;
